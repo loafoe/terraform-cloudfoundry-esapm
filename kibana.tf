@@ -1,9 +1,10 @@
-module "grafana" {
-  source = "philips-labs/grafana/cloudfoundry"
-  version = ">= 0.2.1"
+module "kibana" {
+  #source = "philips-labs/grafana/cloudfoundry"
+  #version = ">= 0.2.1"
+  source = "/Users/andy/DEV/Philips/terraform-cloudfoundry-kibana"
 
-  count         = var.enable_grafana ? 1 : 0
-  grafana_image = var.grafana_image
+  count         = var.enable_kibana ? 1 : 0
+  kibana_image = var.kibana_image
   cf_space      = cloudfoundry_space.space.name
   cf_org        = data.cloudfoundry_org.org.name
   cf_domain     = data.cloudfoundry_domain.app_domain.name

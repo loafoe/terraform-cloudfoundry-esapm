@@ -33,14 +33,14 @@ variable "elastic_options" {
 EOF
 }
 
-variable "enable_grafana" {
-  description = "Adds a Grafana deployment when enabled"
+variable "enable_kibana" {
+  description = "Adds a Kibana deployment when enabled"
   type        = bool
-  default     = false
+  default     = true
 }
 
-variable "grafana_image" {
+variable "kibana_image" {
   description = "Image to use for Grafana"
-  default     = "grafana/grafana:latest"
+  default     = "docker.elastic.co/kibana/kibana:7.7.1"
   type        = string
 }
