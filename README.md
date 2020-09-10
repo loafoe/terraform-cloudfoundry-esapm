@@ -1,7 +1,7 @@
 <img src="https://cdn.rawgit.com/hashicorp/terraform-website/master/content/source/assets/images/logo-hashicorp.svg" width="500px">
 
 # terraform-cloudfoundry-esapm
-Creates an Elastic cluster with APM enabled and deploy Kibana configured for use with the cluster
+Creates an Elastic cluster with APM enabled and a Kibana configured for use with the cluster
 
 ## Requirements
 
