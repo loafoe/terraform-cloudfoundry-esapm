@@ -19,15 +19,15 @@ resource "cloudfoundry_space_users" "users" {
 }
 
 resource "cloudfoundry_service_instance" "elastic" {
-  name  = "elastic-apm"
-  space = cloudfoundry_space.space.id
-  service_plan  = data.cloudfoundry_service.elastic.service_plans[var.elastic_plan]
-  json_params = var.elastic_options
+  name         = "elastic-apm"
+  space        = cloudfoundry_space.space.id
+  service_plan = data.cloudfoundry_service.elastic.service_plans[var.elastic_plan]
+  json_params  = var.elastic_options
 
   depends_on = [cloudfoundry_space_users.users]
 }
 
 resource "cloudfoundry_service_key" "elastic_key" {
-  name = "key"
+  name             = "key"
   service_instance = cloudfoundry_service_instance.elastic.id
 }

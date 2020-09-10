@@ -13,13 +13,13 @@ output "username" {
 }
 output "password" {
   sensitive = true
-  value = cloudfoundry_service_key.elastic_key.credentials.password
+  value     = cloudfoundry_service_key.elastic_key.credentials.password
 }
 
 
 output "apm_secret_token" {
   sensitive = true
-  value = cloudfoundry_service_key.elastic_key.credentials.secret_token
+  value     = cloudfoundry_service_key.elastic_key.credentials.secret_token
 }
 
 output "apm_url" {
