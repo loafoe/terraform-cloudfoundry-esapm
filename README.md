@@ -3,6 +3,19 @@
 # terraform-cloudfoundry-esapm
 Creates an Elastic cluster with APM enabled and a Kibana configured for use with the cluster
 
+## Example usage
+
+```hcl
+module "esapm" {
+  source = "github.com/philips-labs/terraform-cloudfoundry-esapm"
+
+  cf_domain      = "eu-west.philips-healthsuite.com"
+  cf_org         = "hsdp-demo-org"
+  cf_user        = "andy"
+  elastic_plan   = "es7-standard-3"
+}
+```
+
 ## Requirements
 
 | Name | Version |
