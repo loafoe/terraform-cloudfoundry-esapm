@@ -1,7 +1,7 @@
 module "kibana" {
   #source = "philips-labs/grafana/cloudfoundry"
   #version = ">= 0.2.1"
-  source = "/Users/andy/DEV/Philips/terraform-cloudfoundry-kibana"
+  source = "github.com/philips-labs/terraform-cloudfoundry-kibana"
 
   count         = var.enable_kibana ? 1 : 0
   kibana_image = var.kibana_image
