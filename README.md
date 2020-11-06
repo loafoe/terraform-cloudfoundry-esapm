@@ -21,14 +21,14 @@ module "esapm" {
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13.0 |
-| cloudfoundry | >= 0.12.4 |
+| cloudfoundry | >= 0.1206.0 |
 | random | >= 2.2.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| cloudfoundry | >= 0.12.4 |
+| cloudfoundry | >= 0.1206.0 |
 | random | >= 2.2.1 |
 
 ## Inputs
