@@ -2,7 +2,8 @@ locals {
   postfix = "esapm-${random_pet.pets.id}"
 }
 module "kibana" {
-  source = "github.com/philips-labs/terraform-cloudfoundry-kibana"
+  source  = "philips-labs/kibana/cloudfoundry"
+  version = "0.4.0"
 
   count        = var.enable_kibana ? 1 : 0
   kibana_image = var.kibana_image
