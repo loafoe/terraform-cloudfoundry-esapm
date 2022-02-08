@@ -1,12 +1,15 @@
+locals {
+  postfix = "esapm-${random_pet.pets.id}"
+}
 module "kibana" {
   source = "github.com/philips-labs/terraform-cloudfoundry-kibana"
 
   count        = var.enable_kibana ? 1 : 0
   kibana_image = var.kibana_image
-  cf_space     = cloudfoundry_space.space.name
+  cf_space     = data.cloudfoundry_space.space.name
   cf_org       = data.cloudfoundry_org.org.name
   cf_domain    = data.cloudfoundry_domain.app_domain.name
-  name_postfix = random_id.id.hex
+  name_postfix = local.postfix
 
   environment = {
     ELASTICSEARCH_HOSTS    = "https://${cloudfoundry_service_key.elastic_key.credentials.hostname}:${cloudfoundry_service_key.elastic_key.credentials.port}"
@@ -14,5 +17,5 @@ module "kibana" {
     ELASTICSEARCH_PASSWORD = cloudfoundry_service_key.elastic_key.credentials.password
   }
 
-  depends_on = [cloudfoundry_space_users.users]
+
 }
