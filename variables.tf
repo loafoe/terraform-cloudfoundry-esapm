@@ -2,7 +2,10 @@ variable "cf_org" {
   description = "Cloudfoundry ORG name to deploy to"
   type        = string
 }
-
+variable "cf_space" {
+  description = "Cloudfoundry space name to deploy to"
+  type        = string
+}
 variable "cf_domain" {
   description = "The Cloudfoundry regular app domain to use"
   type        = string

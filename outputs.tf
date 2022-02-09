@@ -1,6 +1,4 @@
-output "name" {
-  value = local.space_name
-}
+
 
 output "kibana_endpoint" {
   value = module.kibana[0].kibana_endpoint

@@ -18,3 +18,7 @@ data "cloudfoundry_domain" "apps_internal_domain" {
 data "cloudfoundry_service" "elastic" {
   name = var.elastic_broker
 }
+data "cloudfoundry_space" "space" {
+  org  = data.cloudfoundry_org.org.id
+  name = var.cf_space
+}
