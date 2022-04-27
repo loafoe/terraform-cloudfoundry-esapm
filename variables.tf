@@ -47,3 +47,9 @@ variable "kibana_image" {
   default     = "docker.elastic.co/kibana/kibana:7.7.1"
   type        = string
 }
+variable "kibana_encryption_key" {
+  description = "Encryption key to enable alerts in Kibana"
+  default     = ""
+  type        = string
+  # example: 2751772b-5e27-41f4-adf7-b7322260e5f8
+}
